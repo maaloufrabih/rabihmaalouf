@@ -139,36 +139,41 @@ section { padding: 9rem 5rem; }
 }
 .section-label::after { content: ''; height: 0.5px; width: 36px; background: var(--blue-dim); display: block; }
 
-/* ─── ABOUT PAGE BANNER ─── */
-.about-banner {
-  width: 100%;
-  height: 45vh; 
-  min-height: 350px;
-  position: relative;
+/* ─── ABOUT ─── */
+.about { 
+  position: relative; 
+  background: var(--bg-alt); 
+  padding-top: 11rem; /* Added space so text starts below the fixed navigation */
+  min-height: 100vh;
   overflow: hidden;
-  margin-top: 5.5rem; 
-  border-bottom: 0.5px solid var(--border);
-  background: var(--bg-alt);
-}
-.about-banner img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
-  object-position: center 35%; 
-  filter: contrast(1.02) brightness(0.98); 
-}
-.about-banner-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 70%, var(--bg-alt) 100%);
-  pointer-events: none;
 }
 
-/* ─── ABOUT ─── */
-.about { background: var(--bg-alt); }
+/* New faded background styling */
+.about-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.about-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.08; /* Extremely subtle fade so the text is fully legible */
+  filter: grayscale(30%); /* Softens the colors slightly */
+}
+.about-bg-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to bottom, var(--bg-alt) 0%, rgba(242,245,249,0.2) 20%, var(--bg-alt) 100%);
+}
+
+.about-content {
+  position: relative;
+  z-index: 2; /* Forces all text and content above the background image */
+}
+
 .about-grid { display: grid; grid-template-columns: 0.85fr 1.6fr; gap: 7rem; align-items: start; }
 
 .about-headline {
@@ -187,6 +192,8 @@ section { padding: 9rem 5rem; }
   margin-top: 3.5rem;
   display: grid; grid-template-columns: 1fr 1fr; gap: 0;
   border-top: 0.5px solid var(--border); border-left: 0.5px solid var(--border);
+  background: rgba(255, 255, 255, 0.4); /* Adds a very subtle blur/solidness behind credentials to enhance reading */
+  backdrop-filter: blur(5px);
 }
 .cred { padding: 1.4rem 1.6rem; border-right: 0.5px solid var(--border); border-bottom: 0.5px solid var(--border); }
 .cred-label { font-size: 0.58rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.45rem; }
@@ -373,8 +380,8 @@ footer { padding: 2.2rem 5rem; border-top: 0.5px solid var(--border); display: f
   nav.scrolled { padding: 0.9rem 1.5rem; }
   .nav-links { gap: 1.6rem; }
   .hero, section, .cred-strip { padding: 5.5rem 1.5rem; }
+  .about { padding-top: 8rem; } /* Pushes text below nav on mobile */
   .hero-scroll-indicator { display: none; }
-  .about-banner { height: 35vh; min-height: 250px; margin-top: 4rem; } /* Mobile banner adjust */
   .focus-grid { grid-template-columns: 1fr; }
   .focus-card { border-right: none; border-bottom: 0.5px solid var(--border); }
   .focus-card:last-child { border-bottom: none; }
