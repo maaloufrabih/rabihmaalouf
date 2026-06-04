@@ -27,28 +27,63 @@
 <section class="contact" style="padding-top: 12rem; min-height: 100vh;">
   <p class="section-label reveal">Contact</p>
   <div class="contact-grid">
+    
+    <!-- Left Column: Text & Quick Details -->
     <div>
       <h2 class="contact-headline reveal">Let us<br><em>engage.</em></h2>
-      <p class="contact-sub reveal delay-1">For institutional mandates, strategic advisory engagements, speaking invitations, academic collaboration, or media enquiries — direct correspondence is preferred. All communications are treated with full discretion.</p>
-    </div>
-    <div>
-      <div class="contact-row reveal">
+      <p class="contact-sub reveal delay-1" style="margin-bottom: 3rem;">
+        For institutional mandates, strategic advisory engagements, speaking invitations, academic collaboration, or media enquiries — direct correspondence is preferred. All communications are treated with full discretion.
+      </p>
+      
+      <div class="contact-row reveal delay-2">
         <p class="contact-row-label">Email</p>
         <a href="mailto:rabihmaalouf@gmail.com" class="contact-row-value">rabihmaalouf@gmail.com</a>
       </div>
-      <div class="contact-row reveal delay-1">
+      <div class="contact-row reveal delay-2">
         <p class="contact-row-label">Telephone</p>
         <a href="tel:+9613959569" class="contact-row-value">+961 3 959 569</a>
       </div>
-      <div class="contact-row reveal delay-2">
+      <div class="contact-row reveal delay-3">
         <p class="contact-row-label">Based in</p>
         <p class="contact-row-value">Beirut, Lebanon — International Assignments</p>
       </div>
-      <div class="contact-row reveal delay-3">
-        <p class="contact-row-label">Languages</p>
-        <p class="contact-row-value">Arabic · English · French · Portuguese</p>
-      </div>
     </div>
+    
+    <!-- Right Column: FormSubmit Form -->
+    <div class="reveal delay-1">
+      <form action="https://formsubmit.co/rm.stratadvisory@gmail.com" method="POST" class="inquiry-form">
+        
+        <!-- FormSubmit Configurations -->
+        <input type="hidden" name="_subject" value="New Strategic Inquiry — RabihMaalouf.com">
+        <input type="hidden" name="_template" value="table">
+        <!-- Optional: redirect to a thank you page. Right now it will default to FormSubmit's thank you page -->
+        
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required placeholder="e.g., Alexander Wright">
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="e.g., alexander@institution.org">
+        </div>
+
+        <div class="form-group">
+          <label for="organization">Organization / Institution</label>
+          <input type="text" id="organization" name="organization" placeholder="e.g., World Bank / Ministry of Justice">
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Nature of Inquiry</label>
+          <textarea id="message" name="message" rows="5" required placeholder="Provide a brief outline of the matter..."></textarea>
+        </div>
+        
+        <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer; text-align: center;">
+          Submit Inquiry
+        </button>
+      </form>
+    </div>
+
   </div>
 </section>
 
