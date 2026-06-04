@@ -1,7 +1,7 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --bg:          #FFFFFF;
+  --bg:           #FFFFFF;
   --bg-alt:      #F2F5F9;
   --text:        #0D1B2A;
   --muted:       #6B7A8D;
@@ -256,6 +256,55 @@ section { padding: 9rem 5rem; }
 .contact-row-value { font-family: 'Cormorant Garant', serif; font-size: 1.1rem; color: var(--text); text-decoration: none; transition: color 0.3s; }
 a.contact-row-value:hover { color: var(--blue); }
 
+/* ─── INQUIRY FORM ─── */
+.inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  background: var(--bg);
+  padding: 3rem;
+  border: 0.5px solid var(--border);
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.form-group label {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+.form-group input,
+.form-group textarea {
+  background: var(--bg-alt);
+  border: 0.5px solid transparent;
+  padding: 1rem;
+  color: var(--text);
+  font-family: 'Jost', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--blue);
+  background: var(--bg);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--muted);
+  opacity: 0.5;
+}
+.inquiry-form button[type="submit"] {
+  border: none;
+  cursor: pointer;
+  font-family: 'Jost', sans-serif;
+}
+
 /* ─── FOOTER ─── */
 footer { padding: 2.2rem 5rem; border-top: 0.5px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
 .footer-logo { font-family: 'Cormorant Garant', serif; font-size: 0.88rem; letter-spacing: 0.12em; color: var(--muted); }
@@ -305,5 +354,6 @@ footer { padding: 2.2rem 5rem; border-top: 0.5px solid var(--border); display: f
   .cred-strip-inner { grid-template-columns: 1fr; }
   .cred-strip-item { border-right: none !important; border-top: 0.5px solid rgba(255,255,255,0.15); padding: 1.5rem 0; }
   .cred-strip-item:first-child { border-top: none; }
+  .inquiry-form { padding: 2rem 1.5rem; } /* Adjusted form breathing room on smaller viewports */
   footer { flex-direction: column; gap: 0.8rem; text-align: center; padding: 2rem 1.5rem; }
 }
